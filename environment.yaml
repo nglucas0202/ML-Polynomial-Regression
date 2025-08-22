@@ -1,0 +1,24 @@
+name: lucas-ml-projects
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - numpy==1.20.3
+  - pandas==1.2.4
+  - invoke
+  - black
+  - flake8
+  - isort
+  - mypy
+  - tqdm
+  - pip
+  - pytorch==1.9.0
+  - torchvision
+  - pip:
+    - wget==3.2
+    - .  # mlutils (aka utils import)
