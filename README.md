@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ML-Portfolio
 Showcasing Machine Learning projects - Polynomial Regression
 =======
@@ -20,6 +19,8 @@ This project demonstrates:
 - Implementation of **regularized polynomial regression**.
 - Examine the bias-variance tradeoff through learning curves, by using different values for $d$ and $\lambda$
 
+&nbsp;<br>
+  
 ## Part 1 - Regularization
 ### Data
 A small dataset with $n=11$ points:
@@ -38,6 +39,15 @@ If we plot $(X, y)$, it suggests a nonlinear relationship with bumps and curvatu
 By fixing the degree of the polynomial $d=8$, the following two plots show the prediction curve with regularization ($\lambda=0.02$) and without regularization ($\lambda=0$). From the plot without regularization, we see that
 the function fits the data well, but will not generalize well to new data points. By increasing $\lambda$ to 0.02, the curve smoothed out quite a lot while still following the treand of the data, showing the effect of shrinking weights and reducing in variance.
 
+<table style="border-collapse: collapse; border: none;" border="0">
+  <tr>
+    <td style="border: none;"><img src="images/Part1-NoReg.png" width="500"></td>
+    <td style="border: none;"><img src="images/Part1-WithReg.png" width="500"></td>
+  </tr>
+</table>
+
+&nbsp;<br>
+
 ## Part 2 - Bias vs Variance
 We also analyze the **bias-variance tradeoff** using **learning curves**, which show how the training error and testing error evolve as the number of training examples increases.
 
@@ -54,6 +64,8 @@ We plot the learning curves for various values of $\lambda$ and $d$ as shown bel
 - The plot of the (almost) unregularized model ($\lambda = 10^{−6}$) with $d=8$ shows that the training error is low, but that the testing error is high. There is a huge gap between the training and testing errors caused by the model overfitting the training data, indicating a high variance problem.
 - As the regularization parameter increases (e.g., $\lambda = 1$) with $d=8$, we see that the gap between the training and testing error narrows, with both the training and testing errors converging to a low value. We can see that the model fits the data well and generalizes well, and therefore does not have either a high bias or a high variance problem. Effectively, it has a good tradeoff between bias and variance.
 - Once the regularization parameter is too high ($\lambda = 100$), we see that the training and testing errors are once again high, indicating a poor fit. Effectively, there is too much regularization, resulting in high bias.
+
+![Learning Curves Plot](images/Part2-Learning.png)
 
 ## Installation / Setup
 ### 1. Conda Environment Setup
