@@ -11,7 +11,6 @@ from utils import problem
 
 
 class PolynomialRegression:
-    @problem.tag("hw1-A", start_line=5)
     def __init__(self, degree: int = 1, reg_lambda: float = 1e-8):
         """Constructor
         """
@@ -25,7 +24,6 @@ class PolynomialRegression:
         self.sigma_: np.ndarray = None  # feature std for standardization
 
     @staticmethod
-    @problem.tag("hw1-A")
     def polyfeatures(X: np.ndarray, degree: int) -> np.ndarray:
         """
         Expands the given X into an (n, degree) array of polynomial features of degree degree.
@@ -57,7 +55,6 @@ class PolynomialRegression:
             self.sigma_ = np.where(self.sigma_ < eps, 1.0, self.sigma_)
         return (Phi - self.mu_) / self.sigma_
 
-    @problem.tag("hw1-A")
     def fit(self, X: np.ndarray, y: np.ndarray):
         """
         Trains the model, and saves learned weight in self.weight
@@ -93,7 +90,6 @@ class PolynomialRegression:
         b = Z.T @ y
         self.weight = np.linalg.solve(A, b)
 
-    @problem.tag("hw1-A")
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
         Use the trained model to predict values for each instance in X.
@@ -118,7 +114,6 @@ class PolynomialRegression:
         return Z @ self.weight
 
 
-@problem.tag("hw1-A")
 def mean_squared_error(a: np.ndarray, b: np.ndarray) -> float:
     """Given two arrays: a and b, both of shape (n, 1) calculate a mean squared error.
 
@@ -138,7 +133,6 @@ def mean_squared_error(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.mean((a - b) ** 2))
 
 
-@problem.tag("hw1-A", start_line=5)
 def learningCurve(
     Xtrain: np.ndarray,
     Ytrain: np.ndarray,
